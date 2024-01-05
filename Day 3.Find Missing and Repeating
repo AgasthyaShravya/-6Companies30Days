@@ -1,0 +1,18 @@
+class Solve {
+    int[] findTwoElement(int arr[], int n) {
+        int i;
+        int[] ans=new int[2];
+        for (i = 0; i < arr.length; i++) {
+            int val = Math.abs(arr[i]);
+            if (arr[val - 1] > 0)
+                arr[val - 1] = -arr[val - 1];
+            else
+                ans[0]=val;
+        }
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] > 0)
+                ans[1]=i+1;
+        }
+        return ans;
+    }
+}
