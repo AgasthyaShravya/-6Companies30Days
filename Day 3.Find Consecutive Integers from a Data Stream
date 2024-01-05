@@ -1,0 +1,16 @@
+private int c=0;
+    private int value;
+    private int k;
+    private Queue<Integer> q = new ArrayDeque<>();
+    public DataStream(int value, int k) {
+        this.value = value;
+        this.k = k;
+    }    
+    public boolean consec(int num) {
+       if(q.size()==k&&q.poll()==value)
+       --c;
+       if(num==value)
+       ++c;
+       q.offer(num);
+       return c==num;
+    }
